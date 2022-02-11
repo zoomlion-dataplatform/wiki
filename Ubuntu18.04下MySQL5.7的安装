@@ -1,0 +1,59 @@
+进行命令行安装：
+
+1.安装MySQL服务端和客户端：
+
+sudo apt-get install mysql-server-5.7
+
+2.安装依赖：
+
+sudo apt install libmysqlclient-dev
+
+3.检查状态
+
+sudo netstat -tap | grep mysql
+
+4.进入root用户
+
+sudo su
+
+设置mysql的密码：
+
+1.进入mysql，在命令行直接输入"mysql"
+
+2."show databases;"
+
+3."use mysql;"
+
+4."show tables;"
+
+5.修改root的plugin和密码
+
+select user,plugin,authentication_string from user;
+
+
+
+update user set plugin = 'mysql_native_password' where user='root';
+​
+update user set authentication_string=PASSWORD('admin') where user='root';
+
+6.退出mysql命令行，"exit"
+
+7.重启数据库服务：
+
+sudo /etc/init.d/mysql restart
+
+8.正常登录mysql
+
+mysql -uroot -p
+
+9.查看mysql状态、开启、停止数据库服务
+
+查看mysql状态  sudo service mysql status
+启动mysql服务  sudo service mysql start
+停止mysql服务 sudo service mysql stop
+重启mysql服务 sudo service msyql restart
+
+ 10.安装mysql的图形化管理软件
+
+sudo apt-get install mysql-workbench
+
