@@ -57,3 +57,10 @@ mysql -uroot -p
 
 sudo apt-get install mysql-workbench
 
+11. 卸载
+sudo apt-get remove --purge mysql-server mysql-client mysql-common
+sudo apt-get autoremove
+sudo apt-get autoclean
+sudo deluser mysql
+sudo rm -rf /var/lib/mysql
+
