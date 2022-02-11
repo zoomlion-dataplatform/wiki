@@ -1,0 +1,9 @@
+1、安装mysql报错ERROR: Database files are locked. Daemon already running?
+【解决方式】
+  使用命令查看有哪些mysql在运行，并杀死他们。
+  ps -ef | grep mysql  
+  再更新系统
+  sudo apt-get update
+  然后，修复安装错误，会提示输入mysql用户名密码
+  sudo apt-get --fix-broken install
+  然后，检索mysql安装包，并删除检索出的依赖包，然后是删除/var/lib/mysql,最后重装mysql。
